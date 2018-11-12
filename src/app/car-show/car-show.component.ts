@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CarShowService} from './services/car-show.service';
-import {CarWithShowInfo} from './services/car-with-show-info';
+import {CarShow} from './services/car-show';
 
 @Component({
   selector: 'app-car-show',
@@ -9,16 +9,21 @@ import {CarWithShowInfo} from './services/car-with-show-info';
 })
 export class CarShowComponent implements OnInit {
 
-  carWithShowInfoList$: CarWithShowInfo[] = [];
+  carShows$: CarShow[] = [];
 
   constructor(private carShowService: CarShowService) { }
 
   ngOnInit() {
   }
 
-  getCarListWithShowInfo(): void {
-    this.carShowService.getShows().subscribe(shows => {
-      this.carWithShowInfoList$ = this.carShowService.generateCarWithShowInfoListFromShows(shows);
+  getCarShows(): void {
+    this.carShowService.getShows()
+      .subscribe(shows => {
+      this.carShows$ = this.carShowService.getCarShows(shows);
     });
+  }
+
+  clear(): void {
+    this.carShows$ = [];
   }
 }

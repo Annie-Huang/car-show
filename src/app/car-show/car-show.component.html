@@ -10,7 +10,11 @@
     <div class='col-md-12'>
       <button type="button"
               class="btn btn-primary"
-              (click)="getCarListWithShowInfo()">Display Car brands with the shows they attended</button>
+              (click)="getCarShows()">Display Car shows</button>
+      &nbsp;&nbsp;
+      <button type="button"
+              class="btn btn-default"
+              (click)="clear()">Clear Result</button>
     </div>
   </div>
   <div class='row'>
@@ -18,7 +22,7 @@
     </div>
   </div>
   <br>
-  <div class='row' *ngIf="carWithShowInfoList$.length>0">
+  <div class='row' *ngIf="carShows$.length>0">
     <div class='col-md-12'>
       <div class='panel panel-info'>
         <div class='panel-heading'>
@@ -26,8 +30,8 @@
         </div>
         <div class='panel-body'>
           <div class='row'>
-            <div class='col-md-12' *ngFor="let carWithShowInfo of carWithShowInfoList$">
-              <h4>{{carWithShowInfo.make}} | {{carWithShowInfo.model}} | {{carWithShowInfo.shows}}</h4>
+            <div class='col-md-12' *ngFor="let carShow of carShows$">
+              <h4>{{carShow.make}} | {{carShow.model}} | {{carShow.shows}}</h4>
             </div>
           </div>
         </div>

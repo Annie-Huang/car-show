@@ -4,7 +4,7 @@ import {Observable, of} from 'rxjs';
 import sortBy from 'lodash.sortby';
 
 import {Show} from './show';
-import {CarWithShowInfo} from './car-with-show-info';
+import {CarShow} from './car-show';
 
 declare var require: any;
 
@@ -19,35 +19,38 @@ export class CarShowService {
   getShows(): Observable<Show[]> {
     const shows: Show[] = require('../../../resources/fixtures/carShows.json');
     return of(shows);
-    // return this.http.get('http://eacodingtest.digital.energyaustralia.com.au/api/v1/cars');
+    // return this.http.get<Show[]>('http://eacodingtest.digital.energyaustralia.com.au/api/v1/cars');
   }
 
-  generateCarWithShowInfoListFromShows(shows: Show[]): CarWithShowInfo[] {
-    let carWithShowInfoList = [];
+  getCarShows(shows: Show[]): CarShow[] {
+    const tempCarShowObj: Object = {};  // With intended structure of: {make+model: {make, model, shows}}
 
-    // Create carWithShowInfoList with each item contains: make, model, shows.
-    shows.map(show => {
-      show.cars.map(car => {
-        const matchCarList = carWithShowInfoList.filter(cWSI => cWSI.make === car.make && cWSI.model === car.model);
+    // Create carShows with each item contains: {make+model: {make, model, shows}}.
+    shows.forEach(show => {
+      show.cars.forEach(car => {
+        const key = car.make + car.model;
 
-        if (matchCarList.length === 0) {
-          carWithShowInfoList.push({
-            ...car,
-            shows: [show.name]
-          });
+        if (tempCarShowObj[key]) {
+          tempCarShowObj[key].shows.push(show.name);
+          // Sort shows list by alphabetically
+          tempCarShowObj[key].shows = tempCarShowObj[key].shows.sort();
 
         } else {
-          matchCarList[0].shows.push(show.name);
-          // Sort shows list by alphabetically
-          matchCarList[0].shows = matchCarList[0].shows.sort();
+          tempCarShowObj[key] = {
+            ...car,
+            shows: [show.name]
+          };
         }
 
       });
     });
 
-    // Sort carWithShowInfoList by make and model
-    carWithShowInfoList = sortBy(carWithShowInfoList, ['make', 'model']);
+    // Create CarShow[] and sorted by make and model
+    let carShows: CarShow[] = Object.keys(tempCarShowObj).map(key => tempCarShowObj[key]);
+    if (carShows) {
+      carShows = sortBy(carShows, ['make', 'model']);
+    }
 
-    return carWithShowInfoList;
+    return carShows;
   }
 }
