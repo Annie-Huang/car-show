@@ -1,0 +1,37 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h2>
+        Welcome, please click the button below for cars and shows information
+      </h2>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-12'>
+      <button type="button"
+              class="btn btn-primary"
+              (click)="getCarListWithShowInfo()">Display Car brands with the shows they attended</button>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-12'>
+    </div>
+  </div>
+  <br>
+  <div class='row' *ngIf="carWithShowInfoList$.length>0">
+    <div class='col-md-12'>
+      <div class='panel panel-info'>
+        <div class='panel-heading'>
+          Result:
+        </div>
+        <div class='panel-body'>
+          <div class='row'>
+            <div class='col-md-12' *ngFor="let carWithShowInfo of carWithShowInfoList$">
+              <h4>{{carWithShowInfo.make}} | {{carWithShowInfo.model}} | {{carWithShowInfo.shows}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
