@@ -26,12 +26,9 @@ export class CarShowComponent implements OnInit {
 
     this.carShowService.getShows()
       .subscribe(shows => {
-        console.log('shows=', shows);
         shows ?
           this.carShows$ = CarShowFormatUtils.getCarShows(shows) :
           this.noRecordMsg$ = EMPTY_RECORD_MSG;
-        const annie = this.carShows$;
-        console.log('this.carShows$', this.carShows$);
       }, error => {
         this.errorMsg$ = error;
       });
