@@ -14,26 +14,35 @@
       &nbsp;&nbsp;
       <button type="button"
               class="btn btn-default"
-              (click)="clear()">Clear Result</button>
-    </div>
-  </div>
-  <div class='row'>
-    <div class='col-md-12'>
+              (click)="reset()">Clear Result</button>
     </div>
   </div>
   <br>
-  <div class='row' *ngIf="carShows$.length>0">
+  <div class="alert alert-danger" *ngIf="errorMsg$">
+    <strong>Error!</strong> <br> Something bad happened; please contact our friendly support team on 1300 000 000.
+    <br> Details: {{errorMsg$}}
+  </div>
+  <div class='row' *ngIf="carShows$.length>0 || emptyRecords$">
     <div class='col-md-12'>
       <div class='panel panel-info'>
         <div class='panel-heading'>
-          Result:
+          <strong>Result:</strong>
         </div>
         <div class='panel-body'>
+          <div class='row' *ngIf="emptyRecords$">
+            <div class='col-md-12'>
+              <h4>{{this.emptyRecords$}}</h4>
+            </div>
+          </div>
           <div class='row'>
             <div class='col-md-12' *ngFor="let carShow of carShows$">
               <h4>{{carShow.make}} | {{carShow.model}} | {{carShow.shows}}</h4>
             </div>
           </div>
+        </div>
+        <div class='panel-footer'>
+          <div>*'Unknown Show Name' means there is a show the car manufacturer attended that we are unsure about.</div>
+          <div>*'Unknown Car Model' means we are unsure which model this car manufacturer sent for the show.</div>
         </div>
       </div>
     </div>

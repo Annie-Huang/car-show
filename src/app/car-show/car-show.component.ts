@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CarShowService} from './services/car-show.service';
 import {CarShow} from './services/car-show';
 
+const EMPTY_RECORDS = 'No car show records stored in the server at this stage.';
+
 @Component({
   selector: 'app-car-show',
   templateUrl: './car-show.component.html',
@@ -10,6 +12,8 @@ import {CarShow} from './services/car-show';
 export class CarShowComponent implements OnInit {
 
   carShows$: CarShow[] = [];
+  emptyRecords$: string;
+  errorMsg$: string;
 
   constructor(private carShowService: CarShowService) { }
 
@@ -17,13 +21,23 @@ export class CarShowComponent implements OnInit {
   }
 
   getCarShows(): void {
+    this.reset();
+
     this.carShowService.getShows()
       .subscribe(shows => {
-      this.carShows$ = this.carShowService.getCarShows(shows);
-    });
+        console.log('shows=', shows);
+        shows ?
+          this.carShows$ = this.carShowService.getCarShows(shows) :
+          this.emptyRecords$ = EMPTY_RECORDS;
+        console.log('this.carShows$', this.carShows$);
+      }, error => {
+        this.errorMsg$ = error;
+      });
   }
 
-  clear(): void {
+  reset(): void {
     this.carShows$ = [];
+    this.emptyRecords$ = null;
+    this.errorMsg$ = null;
   }
 }
