@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CarShowService} from './service/car-show.service';
 import {CarShow} from './service/car-show';
+import {CarShowFormatUtils} from './utils/car-show-format-utils';
 
 export const EMPTY_RECORD_MSG = 'No car show records stored in the server at this stage.';
 
@@ -27,7 +28,7 @@ export class CarShowComponent implements OnInit {
       .subscribe(shows => {
         console.log('shows=', shows);
         shows ?
-          this.carShows$ = this.carShowService.getCarShows(shows) :
+          this.carShows$ = CarShowFormatUtils.getCarShows(shows) :
           this.noRecordMsg$ = EMPTY_RECORD_MSG;
         const annie = this.carShows$;
         console.log('this.carShows$', this.carShows$);

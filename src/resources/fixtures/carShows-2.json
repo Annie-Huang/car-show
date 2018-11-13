@@ -1,0 +1,97 @@
+[
+  {
+    "make": "Edison Motors",
+    "model": "Unknown Car Model",
+    "shows": [
+      "New York Car Show"
+    ]
+  },
+  {
+    "make": "George Motors",
+    "model": "George 15",
+    "shows": [
+      "Cartopia",
+      "Melbourne Motor Show",
+      "New York Car Show"
+    ]
+  },
+  {
+    "make": "Hondaka",
+    "model": "Elisa",
+    "shows": [
+      "Carographic",
+      "Carographic",
+      "Melbourne Motor Show",
+      "New York Car Show"
+    ]
+  },
+  {
+    "make": "Hondaka",
+    "model": "Ellen",
+    "shows": [
+      "Cartopia"
+    ]
+  },
+  {
+    "make": "Julio Mechannica",
+    "model": "Mark 1",
+    "shows": [
+      "New York Car Show"
+    ]
+  },
+  {
+    "make": "Julio Mechannica",
+    "model": "Mark 2",
+    "shows": [
+      "Carographic",
+      "Cartopia"
+    ]
+  },
+  {
+    "make": "Julio Mechannica",
+    "model": "Mark 4",
+    "shows": [
+      "Carographic",
+      "Carographic"
+    ]
+  },
+  {
+    "make": "Julio Mechannica",
+    "model": "Mark 4S",
+    "shows": [
+      "Melbourne Motor Show"
+    ]
+  },
+  {
+    "make": "Moto Tourismo",
+    "model": "Cyclissimo",
+    "shows": [
+      "Cartopia",
+      "Melbourne Motor Show",
+      "New York Car Show"
+    ]
+  },
+  {
+    "make": "Moto Tourismo",
+    "model": "Delta 16",
+    "shows": [
+      "Cartopia"
+    ]
+  },
+  {
+    "make": "Moto Tourismo",
+    "model": "Delta 4",
+    "shows": [
+      "Cartopia",
+      "Melbourne Motor Show",
+      "Unknown Show Name"
+    ]
+  },
+  {
+    "make": "Moto Tourismo",
+    "model": "Unknown Car Model",
+    "shows": [
+      "Carographic"
+    ]
+  }
+]

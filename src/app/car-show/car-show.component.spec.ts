@@ -13,10 +13,8 @@ describe('CarShowComponent', () => {
   let fixture: ComponentFixture<CarShowComponent>;
 
   let shows = '';
-  let carShows = [];
-  const carShowService = jasmine.createSpyObj('CarShowService', ['getShows', 'getCarShows']);
+  const carShowService = jasmine.createSpyObj('CarShowService', ['getShows']);
   let getShowsSpy = carShowService.getShows.and.returnValue( of(shows) );
-  let getCarShowsSpy = carShowService.getCarShows.and.returnValue( carShows );
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -57,17 +55,15 @@ describe('CarShowComponent', () => {
   });
 
   it('#getShows shall set carShows$ if carShowService.getShows() returns a list.', () => {
-    shows = require('../../resources/fixtures/shows.json');
-    carShows = require('../../resources/fixtures/carShows.json');
+    shows = require('../../resources/fixtures/shows-1.json');
     getShowsSpy = carShowService.getShows.and.returnValue( of(shows) );
-    getCarShowsSpy = carShowService.getCarShows.and.returnValue( carShows );
     component.getCarShows();
     expect(component.carShows$.length).toBe(8);
     expect(component.noRecordMsg$).toBeNull();
   });
 
   it('#getShows shall set carShows$ if carShowService.getShows() throws an error.', () => {
-    shows = require('../../resources/fixtures/shows.json');
+    shows = require('../../resources/fixtures/shows-1.json');
     getShowsSpy = carShowService.getShows.and.returnValue(throwError('abc'));
     component.getCarShows();
     expect(component.errorMsg$).toBe('abc');
