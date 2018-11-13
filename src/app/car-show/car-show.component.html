@@ -18,24 +18,24 @@
     </div>
   </div>
   <br>
-  <div class="alert alert-danger" *ngIf="errorMsg$">
+  <div class="alert alert-danger" *ngIf="errorMsg">
     <strong>Error!</strong> <br> Something bad happened; please contact our friendly support team on 1300 000 000.
-    <br> Details: {{errorMsg$}}
+    <br> Details: {{errorMsg}}
   </div>
-  <div class='row' *ngIf="carShows$.length>0 || noRecordMsg$">
+  <div class='row' *ngIf="carShows.length>0 || noRecordMsg">
     <div class='col-md-12'>
       <div class='panel panel-info'>
         <div class='panel-heading'>
           <strong>Result:</strong>
         </div>
         <div class='panel-body'>
-          <div class='row' *ngIf="noRecordMsg$">
+          <div class='row' *ngIf="noRecordMsg">
             <div class='col-md-12'>
-              <h4>{{this.noRecordMsg$}}</h4>
+              <h4>{{this.noRecordMsg}}</h4>
             </div>
           </div>
           <div class='row'>
-            <div class='col-md-12' *ngFor="let carShow of carShows$">
+            <div class='col-md-12' *ngFor="let carShow of carShows">
               <h4>{{carShow.make}} | {{carShow.model}} | {{carShow.shows}}</h4>
             </div>
           </div>

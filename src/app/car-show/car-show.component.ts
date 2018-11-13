@@ -12,9 +12,9 @@ export const EMPTY_RECORD_MSG = 'No car show records stored in the server at thi
 })
 export class CarShowComponent implements OnInit {
 
-  carShows$: CarShow[] = [];
-  noRecordMsg$: string;
-  errorMsg$: string;
+  carShows: CarShow[] = [];
+  noRecordMsg: string;
+  errorMsg: string;
 
   constructor(private carShowService: CarShowService) { }
 
@@ -27,16 +27,16 @@ export class CarShowComponent implements OnInit {
     this.carShowService.getShows()
       .subscribe(shows => {
         shows ?
-          this.carShows$ = CarShowFormatUtils.getCarShows(shows) :
-          this.noRecordMsg$ = EMPTY_RECORD_MSG;
+          this.carShows = CarShowFormatUtils.getCarShows(shows) :
+          this.noRecordMsg = EMPTY_RECORD_MSG;
       }, error => {
-        this.errorMsg$ = error;
+        this.errorMsg = error;
       });
   }
 
   reset(): void {
-    this.carShows$ = [];
-    this.noRecordMsg$ = null;
-    this.errorMsg$ = null;
+    this.carShows = [];
+    this.noRecordMsg = null;
+    this.errorMsg = null;
   }
 }

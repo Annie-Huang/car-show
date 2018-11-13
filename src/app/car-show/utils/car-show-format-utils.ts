@@ -18,7 +18,7 @@ export class CarShowFormatUtils {
         if (tempCarShowObj[key]) {
           tempCarShowObj[key].shows.push(showName);
           // Sort shows list by alphabetically
-          tempCarShowObj[key].shows = tempCarShowObj[key].shows.sort();
+          tempCarShowObj[key].shows.sort();
 
         } else {
           tempCarShowObj[key] = {
@@ -33,11 +33,7 @@ export class CarShowFormatUtils {
     });
 
     // Create CarShow[] and sorted by make and model
-    let carShows: CarShow[] = Object.keys(tempCarShowObj).map(key => tempCarShowObj[key]);
-    if (carShows) {
-      carShows = sortBy(carShows, ['make', 'model']);
-    }
-
-    return carShows;
+    const carShows: CarShow[] = Object.keys(tempCarShowObj).map(key => tempCarShowObj[key]);
+    return sortBy(carShows, ['make', 'model']);
   }
 }
