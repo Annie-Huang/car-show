@@ -21,7 +21,7 @@ export class CarShowService {
   }
 
   getShows(): Observable<Show[]> {
-    // const shows: Show[] = require('../../../resources/fixtures/carShows.json');
+    // const shows: Show[] = require('../../../resources/fixtures/shows.json');
     // return of(shows);
     return this.http.get<Show[]>('http://eacodingtest.digital.energyaustralia.com.au/api/v1/cars')
                     .pipe(

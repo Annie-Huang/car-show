@@ -1,56 +1,61 @@
 [
   {
-    "name": "Melbourne Motor Show",
-    "cars": [
-      {
-        "make": "Julio Mechannica",
-        "model": "Mark 4S"
-      },
-      {
-        "make": "Hondaka",
-        "model": "Elisa"
-      },
-      {
-        "make": "Moto Tourismo",
-        "model": "Cyclissimo"
-      },
-      {
-        "make": "George Motors",
-        "model": "George 15"
-      },
-      {
-        "make": "Moto Tourismo",
-        "model": "Delta 4"
-      }
+    "make": "George Motors",
+    "model": "George 15",
+    "shows": [
+      "Cartopia",
+      "Melbourne Motor Show"
     ]
   },
   {
-    "name": "Cartopia",
-    "cars": [
-      {
-        "make": "Moto Tourismo",
-        "model": "Cyclissimo"
-      },
-      {
-        "make": "George Motors",
-        "model": "George 15"
-      },
-      {
-        "make": "Hondaka",
-        "model": "Ellen"
-      },
-      {
-        "make": "Moto Tourismo",
-        "model": "Delta 16"
-      },
-      {
-        "make": "Moto Tourismo",
-        "model": "Delta 4"
-      },
-      {
-        "make": "Julio Mechannica",
-        "model": "Mark 2"
-      }
+    "make": "Hondaka",
+    "model": "Elisa",
+    "shows": [
+      "Melbourne Motor Show"
+    ]
+  },
+  {
+    "make": "Hondaka",
+    "model": "Ellen",
+    "shows": [
+      "Cartopia"
+    ]
+  },
+  {
+    "make": "Julio Mechannica",
+    "model": "Mark 2",
+    "shows": [
+      "Cartopia"
+    ]
+  },
+  {
+    "make": "Julio Mechannica",
+    "model": "Mark 4S",
+    "shows": [
+      "Melbourne Motor Show"
+    ]
+  },
+  {
+    "make": "Moto Tourismo",
+    "model": "Cyclissimo",
+    "shows": [
+      "Cartopia",
+      "Melbourne Motor Show"
+    ]
+  },
+  {
+    "make": "Moto Tourismo",
+    "model": "Delta 16",
+    "shows": [
+      "Cartopia"
+    ]
+  },
+  {
+    "make": "Moto Tourismo",
+    "model": "Delta 4",
+    "shows": [
+      "Cartopia",
+      "Melbourne Motor Show"
     ]
   }
 ]
