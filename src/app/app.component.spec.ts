@@ -30,7 +30,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('car-show');
   });
 
-  it('should render title in a h2 tag', () => {
+  it('should render welcome msg in a h2 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
