@@ -18,14 +18,15 @@ Run `ng serve` for a dev server. The app is in `http://localhost:4200/` and will
 Because the API is in http://eacodingtest.digital.energyaustralia.com.au/api/v1/cars, when you run the application locally in your machine, you will get CORS error:
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
-To overcome this, open Chrome in disable-web-sercurity mode: 
+To overcome this, open Chrome in disable-web-sercurity mode:
+
 For Window:
 Enter in Run,
-chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+`chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`
 
 For Mac, 
 close all chrome browsers first, then run
-open -a "Google Chrome" --args --disable-web-security --user-data-dir
+`open -a "Google Chrome" --args --disable-web-security --user-data-dir`
 
 After the browser is loaded, go to http://localhost:4200/
 
