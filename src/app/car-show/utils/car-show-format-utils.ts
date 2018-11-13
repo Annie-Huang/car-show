@@ -16,9 +16,10 @@ export class CarShowFormatUtils {
         const key = car.make + car.model;
 
         if (tempCarShowObj[key]) {
-          tempCarShowObj[key].shows.push(showName);
-          // Sort shows list by alphabetically
-          tempCarShowObj[key].shows.sort();
+          // Only add showName if it doesn't exist.
+          if (!tempCarShowObj[key].shows.includes(showName)) {
+            tempCarShowObj[key].shows.push(showName);
+          }
 
         } else {
           tempCarShowObj[key] = {
@@ -34,6 +35,8 @@ export class CarShowFormatUtils {
 
     // Create CarShow[] and sorted by make and model
     const carShows: CarShow[] = Object.keys(tempCarShowObj).map(key => tempCarShowObj[key]);
+    // Sort shows list by alphabetically
+    carShows.forEach(carShow => carShow.shows.sort());
     return sortBy(carShows, ['make', 'model']);
   }
 }
