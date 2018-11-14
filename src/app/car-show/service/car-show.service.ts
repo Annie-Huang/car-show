@@ -16,7 +16,7 @@ export class CarShowService {
   }
 
   getShows(): Observable<Show[]> {
-    return this.http.get<Show[]>('http://eacodingtest.digital.energyaustralia.com.au/api/v1/cars')
+    return this.http.get<Show[]>('/api/v1/cars')
                     .pipe(
                       catchError(this.handleError)
                     );
