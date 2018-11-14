@@ -13,20 +13,7 @@ Do 'npm install'. You may need to install angular-cli in the global level.
 
 ## When you run the application:
 
-Run `ng serve` for a dev server. The app is in `http://localhost:4200/` and will automatically reload if you change any of the source files.
-
-Because the API is in http://eacodingtest.digital.energyaustralia.com.au/api/v1/cars, when you run the application locally in your machine, you will get CORS error:
-No 'Access-Control-Allow-Origin' header is present on the requested resource.
-
-To overcome this, open Chrome in disable-web-sercurity mode:
-
-For Window:
-Enter in Run,
-`chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`
-
-For Mac, 
-close all chrome browsers first, then run
-`open -a "Google Chrome" --args --disable-web-security --user-data-dir`
+Run `npm start` for a dev server. The app is in `http://localhost:4200/` and will automatically reload if you change any of the source files.
 
 After the browser is loaded, go to http://localhost:4200/
 
