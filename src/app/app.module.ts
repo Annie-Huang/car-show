@@ -7,6 +7,7 @@ import { CarShowComponent } from './car-show/car-show.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import {ButtonModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

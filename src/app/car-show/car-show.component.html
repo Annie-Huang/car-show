@@ -17,6 +17,20 @@
               (click)="reset()">Clear Result</button>
     </div>
   </div>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h2>PrimeNG</h2>
+      <div class='row'>
+        <div class='col-md-1'>
+          <p-button label="Click" (onClick)="handleClick($event)"></p-button>
+        </div>
+        <div class='col-md-2'>
+          <button pButton type="button" label="Click" (click)="handleClick($event)"></button>
+        </div>
+    </div>
+  </div>
+
+
   <br>
   <div class="alert alert-danger" *ngIf="errorMsg">
     <strong>Error!</strong> <br> Something bad happened; please contact our friendly support team on 1300 000 000.
