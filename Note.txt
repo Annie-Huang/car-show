@@ -1,0 +1,3 @@
+On 26/07/2020
+
+Install node-sass as dev dependency to get it working with the current node version in my window
